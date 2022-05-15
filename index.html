@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Монитор</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <section class="top-nav">
+            <a class="logo_header" href="#"></a>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li class="main_page"><a href="#">Главная страница</a></li>
+                <li class="inner" onmouseenter="openInnerSubMenu()"><a href="#">Внутренняя архитектура</a>
+                </li>
+                <li class="outer" onmouseenter="openOuterSubMenu()"><a href="#">Внешняя архитектура</a>
+                </li>
+                <li class="games" onmouseenter="openGamesSubMenu()"><a href="#">Игры</a>
+                </li>
+            </ul>
+        </section>
+        <ul class="submenu submenu1" id="sm1" onmouseleave="closeInnerSubMenu()">
+            <li><a href="#">Оперативная память</a></li>
+            <li><a href="#">Материнская плата</a></li>
+            <li><a href="#">Видеокарта</a></li>
+            <li><a href="#">Процессор</a></li>
+            <li><a href="#">Винчестер</a></li>
+            <li><a href="#">Блок питания</a></li>
+        </ul>
+        <ul class="submenu submenu2" id="sm2" onmouseleave="closeGamesSubMenu()">
+            <li><a href="">Игра о внутренней архитектуре</a></li>
+            <li><a href="">Игра о внешней архитектуре</a></li>
+        </ul>
+        <ul class="submenu submenu3" id="sm3" onmouseleave="closeOuterSubMenu()">
+            <li><a href="">Монитор</a></li>
+            <li><a href="">Клавиатура</a></li>
+            <li><a href="">Мышь</a></li>
+            <li><a href="">Системный блок</a></li>
+        </ul>
+    </header>
+    <div class="content">
+        
+        <div class="container">
+            <div class="block_1_title">Собери свой компьютер прямо сейчас!</div>
+            <div class="block_2">
+                <div class="list">
+                    <ul>
+                        <li onclick="monitor_zoom()">Монитор</li>
+                        <li onclick="system_zoom()" >Системный блок</li>
+                        <li onclick="keyboard_zoom()" >Клавиатура</li>
+                        <li onclick="mouse_zoom()">Мышь</li>
+                    </ul>
+                </div>
+                <div class="monitor_images">
+                    <div class="column">
+                        <div class="image1" onclick="monitor_choise1()"><img src="img/monitor1.png" alt=""></div>
+                        <div class="image2" onclick="monitor_choise3()"><img src="img/monitor3.png" alt=""></div>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image3"onclick="monitor_choise2()"><img src="img/monitor2.png" alt=""></div>
+                        <div class="image4"onclick="monitor_choise4()"><img src="img/monitor4.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="system-block_images">
+                    <div class="column">
+                        <div class="image1" onclick="system_choise1()"><img src="img/system1.png" alt=""></div>
+                        <div class="image2"onclick="system_choise2()"><img src="img/system2.png" alt=""></div>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image3"onclick="system_choise3()"><img src="img/system3.png" alt=""></div>
+                        <div class="image4"onclick="system_choise4()"><img src="img/system4.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="keyboard_images">
+                    <div class="column">
+                        <div class="image1"onclick="keyboard_choise1()"><img src="img/keyboard1.png" alt=""></div>
+                        <div class="image2"onclick="keyboard_choise2()"><img src="img/keyboard2.png" alt=""></div>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image3"onclick="keyboard_choise3()"><img src="img/keyboard3.png" alt=""></div>
+                        <div class="image4"onclick="keyboard_choise4()"><img src="img/keyboard4.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="mouse_images">
+                    <div class="column">
+                        <div class="image1" onclick="mouse_choise1()"><img src="img/mouse1.png" alt=""></div>
+                        <div class="image2" onclick="mouse_choise2()"><img src="img/mouse2.png" alt=""></div>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image3" onclick="mouse_choise3()"><img src="img/mouse3.png" alt=""></div>
+                        <div class="image4" onclick="mouse_choise4()"><img src="img/mouse4.png" alt=""></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="block_3" >
+                <div class="block3_image"onclick="show_result()" onclick="hide_result()"></div>
+                <div class="block3_text">Просмотреть <br></div>
+            </div>
+    </div>
+    <div class="result">
+        <div class="monitor_result">
+            <div class="mon_img1"><img src="img/monitor1.png" alt=""></div>
+            <div class="mon_img2"><img src="img/monitor2.png" alt=""></div>
+            <div class="mon_img3"><img src="img/monitor3.png" alt=""></div>
+            <div class="mon_img4"><img src="img/monitor4.png" alt=""></div>
+        </div>
+        
+        <div class="keyboard_result">
+            <div class="key_img1"><img src="img/keyboard1.png" alt=""></div>
+            <div class="key_img2"><img src="img/keyboard2.png" alt=""></div>
+            <div class="key_img3"><img src="img/keyboard3.png" alt=""></div>
+            <div class="key_img4"><img src="img/keyboard4.png" alt=""></div>
+        </div>
+        
+        <div class="system_result">
+            <div class="sys_img1"><img src="img/system1.png" alt=""></div>
+            <div class="sys_img2"><img src="img/system2.png" alt=""></div>
+            <div class="sys_img3"><img src="img/system3.png" alt=""></div>
+            <div class="sys_img4"><img src="img/system4.png" alt=""></div>
+        </div>
+        
+        <div class="mouse_result">
+            <div class="mouse_img1"><img src="img/mouse1.png" alt=""></div>
+            <div class="mouse_img2"><img src="img/mouse2.png" alt=""></div>
+            <div class="mouse_img3"><img src="img/mouse3.png" alt=""></div>
+            <div class="mouse_img4"><img src="img/mouse4.png" alt=""></div>
+        </div>
+    </div>    
+    </div>
+
+  
+    <div class="show_result">
+        <div class="show_top">
+            <div class="show_text">Вот, что у тебя получилось!</div>
+            <div class="button_show " onclick="hide_result()"><img src="img/cross.png" alt=""></div>
+        </div>
+        
+    <div class="show_result_container">
+        <div class="monitor_show_result">
+            <div class="mon_show_img1"><img src="img/monitor1.png" alt=""></div>
+            <div class="mon_show_img2"><img src="img/monitor2.png" alt=""></div>
+            <div class="mon_show_img3"><img src="img/monitor3.png" alt=""></div>
+            <div class="mon_show_img4"><img src="img/monitor4.png" alt=""></div>
+        </div>
+        
+        <div class="keyboard_show_result">
+            <div class="key_show_img1"><img src="img/keyboard1.png" alt=""></div>
+            <div class="key_show_img2"><img src="img/keyboard2.png" alt=""></div>
+            <div class="key_show_img3"><img src="img/keyboard3.png" alt=""></div>
+            <div class="key_show_img4"><img src="img/keyboard4.png" alt=""></div>
+        </div>
+        
+        <div class="system_show_result">
+            <div class="sys_show_img1"><img src="img/system1.png" alt=""></div>
+            <div class="sys_show_img2"><img src="img/system2.png" alt=""></div>
+            <div class="sys_show_img3"><img src="img/system3.png" alt=""></div>
+            <div class="sys_show_img4"><img src="img/system4.png" alt=""></div>
+        </div>
+        
+        <div class="mouse_show_result">
+            <div class="mouse_show_img1"><img src="img/mouse1.png" alt=""></div>
+            <div class="mouse_show_img2"><img src="img/mouse2.png" alt=""></div>
+            <div class="mouse_show_img3"><img src="img/mouse3.png" alt=""></div>
+            <div class="mouse_show_img4"><img src="img/mouse4.png" alt=""></div>
+        </div>
+    </div>    
+    </div>
+    <div class="footer">
+        <div class="logo_footer">desPCription</div>
+        <div class="seti">
+            <div class="text_network">Ищите нас в соцсетях:</div>
+            <a href="#" class="mail"></a>
+            <a href="#" class="vk"></a>
+            <a href="#" class="insta"></a>
+        </div>
+    </div>
+    <script src="script/script.js"></script>  
+</body>
+</html>
